@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesSE.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous">defer </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark nb-background-color">
+        <!-- lg = large breakpoint, navbar-light = make text dark, headerBG = custom css BG color-->
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="{{url_for('static', filename='/img/pills.png')}}" alt="Antibiotics Logo" class="d-inline-block align-text-top">
+            </a>
+            <!-- Hamburger Menu Button-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--Collapsible navbar menu with custom hover underline CSS animation-->
+            <div class="collapse navbar-collapse" id="navmenu">
+                <!-- Links to hamburger menu button -->
+                <ul class="navbar-nav ms-auto"> <!-- ms-auto is margin spacing -->
+                    <li class="nav-item">
+                        <a href="{{url_for('authors')}}" class="nav-link hover-underline-animation nbMenuItem">Authors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('procedures')}}" class="nav-link hover-underline-animation nbMenuItem">Procedures</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('results')}}" class="nav-link hover-underline-animation nbMenuItem">Results</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Showcase -->
+    <section class="showcase text-light p-2 text-center"> <!-- showcase is custom CSS-->
+        <!-- headerBG = custom css BG color, p-2 - padding 2-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 p-0 d-flex align-items-center">
+                    <!--- img-fliud = won't expand image largeer than the cointainer and will scale down if necessary-->
+                    <img class="img-fluid" src="{{url_for('static', filename='/img/plates.png')}}" alt="Zones of inhibition on plates"> <!-- w-50 = 50% width-->
+                </div>
+                <div class="col-sm-6 p-0 d-flex align-items-center">
+                    <!--- img-fliud = won't expand image largeer than the cointainer and will scale down if necessary-->
+                    <div class="container">
+                        <h1 class="display-4">The Effect of Different Wavelengths of Light on Ampicillin Susceptibility in <em>Escherichia coli</em></h1>
+                        <h2>Sophmore Research Project</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class ="back text-dark p-2 text-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 p-3">
+                    <!--- pt-3 = padding top -->
+                    <img class="img-fluid" src="{{url_for('static', filename='/img/background.png')}}" alt="How Antibiotic Resistance Works">
+                </div>
+                <div class="col-sm-8 p-3">
+                    <h1 class="ovPadLeft">Background</h1> <!-- ovPadLeft - custom padding left side -->
+                    <ul class="lead overview-font ovPadLeft">
+                        <li><strong>Visible and UV light are a major cause of stress in bacteria populations.</strong>
+                          <ul>
+                            <li>A study showed that short-wavelength visible and UV light between 250 and 488 nm causes the viable cell density of <em>E. coli</em>.</li>
+                          </ul>
+                        </li>
+                        <li><strong>UV resistance in <em>E. coli</em> is correlated with resistance to other abiotic stresses.</strong>
+                          <ul>
+                            <li>The results suggested that the variation in UV resistance in a bacteria population is maintained because it causes resistance to other abiotic factors.</li>
+                          </ul>
+                        </li>
+                        <li><strong>Mutations that increase fitness of <em>E. coli</em> in a specific antibiotic-free growth medium can also increase antibiotic resistance through pleiotropy.</strong>
+                          <ul>
+                            <li>The study implies that various growth conditions increase genetic variation in resistance mutations that natural selection can act on after antibiotic exposure.</li>
+                          </ul>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 p-3">
+                    <h1 class="ovPadRight">Rationale</h1> <!-- ovPadRight - custom padding right side -->
+                    <div class="lead overview-font ovPadRight">
+                        <p><strong>Antibiotic resistance is a growing global health problem.</strong></p>
+                        <ul>
+                            <li>Over 2.8 million infections and 35,000 deaths in the US.</li>
+                            <li>Infections limit treatment options and lead to more expensive medical costs, longer hospital stays, and
+                                increased mortality.</li>
+                            <li>It is important to understand how environmental factors, like exposure to different wavelengths of light,
+                                contribute to the development of antibiotic resistance to effectively combat it.</li>
+                            <li>The findings of the study may inform the utilization of UV light as a disinfectant to decrease
+                                antibiotic-resistant populations.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4 p-3">
+                    <!--- pt-3 = padding top -->
+                    <img class="img-fluid" src="{{url_for('static', filename='/img/rationale.jpg')}}" alt="Antibiotic infection statistics show it will be a leading cause of death">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 p-3">
+                    <!--- pt-3 = padding top -->
+                    <img class="img-fluid" src="{{url_for('static', filename='/img/zone.jpg')}}" alt="Antibiotic susceptibility disk diffusion test">
+                </div>
+                <div class="col-sm-8 p-3">
+                    <h1 class="ovPadLeft">Experimental Design</h1> <!-- ovPadLeft - custom padding left side -->
+                    <ul class="lead overview-font ovPadLeft">
+                        <li><strong>Research Question:</strong> How does natural selection from prolonged exposure to different wavelengths
+                            of light affect antibiotic resistance in a population of <em>E. coli</em> K-12?</li>
+                        <li><strong>Objective:</strong> To investigate how the evolution of UV resistance affects antibiotic susceptibility.
+                        </li>
+                        <li><strong>Independent variable:</strong> The wavelength of light that the <em>E. coli</em> population was exposed to.
+                            <ul>
+                                <li>No light (control)</li>
+                                <li>UV light (390 - 400 nm)</li>
+                                <li>Visible light (400 - 700 nm)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dependent variable:</strong> The diameter of the zone of inhibition in centimeters.</li>
+                        <li><strong>Hypothesis:</strong> One reason that ampicillin susceptibility in <em>E. coli</em> varies is that environmental
+                            factors like the exposure to UV light (390 - 400 nm) increases genetic variation of antibiotic-resistant
+                            genes that natural selection can act on, decreasing ampicillin susceptibility.</li>
+                        <li><strong>Prediction:</strong> Exposure to UV light (390 - 400 nm) will result in a significantly smaller
+                            diameter zone of inhibition in an <em>E. coli</em> population, while exposure to visible light (400 - 700 nm) will
+                            result in no significant difference in the diameter of the zone of inhibition.</li>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (requires Boostrap icons CSS)-->
+    <footer class="p-5 footer text-light text-center position-relative">
+        <div class="container">
+            <p class="lead">Copyright &copy; SE 2023 Derek Wang Research</p>
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h2 icon-white"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

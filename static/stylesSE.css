@@ -1,0 +1,93 @@
+/* ----------------- Class CSS ----------------- */
+
+.about{
+    width:400px;
+    margin: auto;
+}
+
+.back{
+    background-color: #f2d8ff; 
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.footer{
+    background-color: #8c5cdf;
+}
+
+.icon-white{            /* Arrow icon at bottom of page */
+    color: #FFFFFF;
+}
+
+.navbar-brand img {
+    max-width: 70px;
+}
+
+.nb-background-color{   /* navbar background color */
+    background-color: #8c5cdf;
+}
+
+.nbMenuItem{               /* navbar link text properties */
+    font-size:25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.showcase{
+    background-color: rgb(185, 124, 255);
+}
+
+.ovPadLeft{
+    padding-left: 20px;
+}
+
+.ovPadRight{  
+    padding-right: 20px;
+}
+
+.procedure{
+    padding: 1px;
+}
+
+.procedure-img{
+    height: 200px;
+}
+
+/* ----------------- ID CSS ----------------- */
+#chart-wrapper{
+    margin: auto;
+    padding: 10px; 
+    height: 80vh;
+    width:  80vw;
+    min-height: 400px;
+    background-color: whitesmoke !important;
+    justify-content: center;
+    align-items: center;  
+}
+
+/* -----------------Underline Animation CSS -----------------*/
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    /*color: #0087ca;*/
+  }
+  
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #eae6e6;
+    /*transform-origin: bottom right;*/
+    transition: transform 0.35s ease-out;
+}
+  
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    /*transform-origin: bottom left;*/
+}

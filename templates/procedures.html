@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesSE.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous">defer </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark nb-background-color">
+    <!-- lg = large breakpoint, navbar-light = make text dark, headerBG = custom css BG color-->
+        <div class="container">
+            <a href="{{url_for('index')}}" class="navbar-brand">
+                <img src="{{url_for('static', filename='/img/pills.png')}}" alt="Antibiotics Logo" class="d-inline-block align-text-top">
+            </a>
+            <!-- Hamburger Menu Button-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--Collapsible navbar menu with custom hover underline CSS animation-->
+            <div class="collapse navbar-collapse" id="navmenu">
+                <!-- Links to hamburger menu button -->
+                <ul class="navbar-nav ms-auto"> <!-- ms-auto is margin spacing -->
+                    <li class="nav-item">
+                        <a href="{{url_for('authors')}}" class="nav-link hover-underline-animation nbMenuItem">Authors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('procedures')}}" class="nav-link hover-underline-animation nbMenuItem">Procedures</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('results')}}" class="nav-link hover-underline-animation nbMenuItem">Results</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="procedure back">
+        <div class="container">
+          <br> <!-- Line break -->
+          <div class="text-center text-dark">
+            <h1>Experimental Procedure</h1>
+          </div>
+          
+          <hr><br> <!-- Horizontal line and line break -->
+    
+          <table class="table table-hover text-center table-light table-bordered border-dark-subtle">
+            <thead>
+              <tr class="table-primary">
+                <th><h3>Step</h3></th>
+                <th><h3>Description</h3></th>
+                <th><h3>Image</h3></th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr class="align-middle">
+                <th scope="row" class="table-secondary">
+                  <h3>1</h3>
+                </th> <!-- scope="row" specifies header cell is the header for a row -->
+                <td>
+                  <h3>Prepared 30 LB agar plates, three light boxes, and six liquid cultures. Each experimental group had two liquid cultures.</h3>
+                </td>
+                <td class="text-center"><img class = "procedure-img" src="{{url_for('static', filename='/img/step1.png')}}" alt="Experiment preparations"></td>
+              </tr>
+              <tr class="align-middle">
+                <th scope="row" class="table-secondary">
+                  <h3>2</h3>
+                </th>
+                <td>
+                  <h3>1 mL of LB broth added to each tube and placed in a water bath at 37°C overnight.</h3>
+                </td>
+                <td class="text-center"><img class = "procedure-img" src="{{url_for('static', filename='/img/step2.png')}}" alt="Cultures in water bath"></td>
+              </tr>
+              <tr class="align-middle">
+                <th scope="row" class="table-secondary">
+                  <h3>3</h3>
+                </th>
+                <td>
+                  <h3>Cultures exposed to one of the three light conditions under a light box depending on their experimental group.</h3>
+                </td>
+                <td class="text-center"><img class = "procedure-img" src="{{url_for('static', filename='/img/step3.png')}}" alt="Cultures placed under light boxes"></td>
+              </tr>
+              <tr class="align-middle">
+                <th scope="row" class="table-secondary">
+                  <h3>4</h3>
+                </th>
+                <td>
+                  <h3>Each culture used to inoculate a plate with three ampicillin disks.</h3>
+                </td>
+                <td class="text-center"><img class = "procedure-img" src="{{url_for('static', filename='/img/step4.png')}}" alt="Inoculated agar plates with ampicllin disks"></td>
+              </tr>
+              <tr class="align-middle">
+                <th scope="row" class="table-secondary">
+                  <h3>5</h3>
+                </th>
+                <td>
+                  <h3>Plates incubated upside down overnight at 37°C.</h3>
+                </td>
+                <td class="text-center"><img class = "procedure-img" src="{{url_for('static', filename='/img/step5.png')}}" alt="Plates inside of incubator"></td>
+              </tr>
+              <tr class="align-middle">
+                <th scope="row" class="table-secondary">
+                  <h3>6</h3>
+                </th>
+                <td>
+                  <h3>The diameters of the zones of inhibition measured with a ruler and recorded. Steps 2-6 were repeated for 5 rounds with the same cultures, compounding the light exposure.</h3>
+                </td>
+                <td class="text-center"><img class = "procedure-img" src="{{url_for('static', filename='/img/step6.png')}}" alt="Zones of inhibition on the plates measured"></td>
+              </tr>
+              <tr class="align-middle">
+                <th scope="row" class="table-secondary">
+                  <h3>7</h3>
+                </th>
+                <td>
+                  <h3>Data organized, analyzed, and graphed in Google Sheets.</h3>
+                </td>
+                <td class="text-center"><img class = "procedure-img" src="{{url_for('static', filename='/img/step7.png')}}" alt="Google Sheets Logo"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    <!-- Footer (requires Boostrap icons CSS)-->
+    <footer class="p-5 footer text-light text-center position-relative">
+        <div class="container">
+            <p class="lead">Copyright &copy; SE 2023 Derek Wang Research</p>
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h2 icon-white"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
