@@ -29,4 +29,4 @@ def data():
     
 # Run server on local IP address at port 5000
 if(__name__ == "__main__"):
-    app.run(debug=True, host='10.119.11.135', port=5000)
+    app.run(debug=False, host='10.119.11.135', port=5000)
