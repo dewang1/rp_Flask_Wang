@@ -1,7 +1,7 @@
 // Create a scatter plot
 // Fetch data from CSV file
 async function getData() {
-    const response = await fetch('/data');
+    const response = await fetch('static/data/meanInhibitionZones.csv');
     const data = await response.text();
     
     // Array to store individual data points

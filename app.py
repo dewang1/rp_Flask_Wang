@@ -21,11 +21,6 @@ def procedures():
 @app.route("/results")                              # Results Page
 def results():
     return render_template("results.html")
-
-@app.route('/data')                                 # Get Data
-def data():
-    with open('static/data/meanInhibitionZones.csv') as f:
-        return f.read()
     
 # Run server on local IP address at port 5000
 if(__name__ == "__main__"):
